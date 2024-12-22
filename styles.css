@@ -233,9 +233,8 @@ nav.active {
 }
 
 
-
-
-/* Catalogue Section */.catalogue {
+/* Catalogue Section */
+.catalogue {
   padding: 60px 20px;
   text-align: center;
 }
@@ -245,18 +244,22 @@ nav.active {
   margin-bottom: 20px;
 }
 
+/* Grille de catalogue centrée */
 .catalogue-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex; /* Utilise Flexbox */
+  flex-wrap: wrap; /* Permet aux items de passer à une nouvelle ligne */
+  gap: 20px; /* Espace entre les items */
+  justify-content: center; /* Centre les items horizontalement */
 }
 
+/* Style pour les items */
 .catalogue-item {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px; /* Largeur fixe pour les items */
 }
 
 .catalogue-item:hover {
@@ -267,7 +270,7 @@ nav.active {
 /* Ajout pour forcer les images à avoir la même taille */
 .catalogue-item img {
   width: 100%; /* S'adapte à la largeur de l'élément parent */
-  height: 270px; /* Fixez la hauteur ici selon vos besoins */
+  height: 270px; /* Hauteur fixée */
   object-fit: cover; /* Recadre l'image pour remplir l'espace sans déformer */
   display: block;
 }
@@ -277,6 +280,14 @@ nav.active {
   font-size: 18px;
   background: #fff;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .catalogue-grid {
+    justify-content: center; /* Toujours centrer les items sur mobile */
+  }
+}
+
 
 /* Contact Section */
 /* Section Contact */
