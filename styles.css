@@ -282,73 +282,93 @@ nav.active {
 /* Section Contact */
 .contact {
   padding: 60px 20px;
-  background-color: #f7efe3; /* Fond doux, beige clair pour l'harmonie */
-  color: #3e3e3e; /* Couleur du texte en gris foncé pour un bon contraste */
+  background: url('./assets/images/contact.avif') no-repeat center center/cover; /* L'image de fond */
+  object-fit: cover;
+  color: #fff; /* Couleur du texte en blanc pour contraster avec l'arrière-plan */
   text-align: center;
-  border-radius: 15px; /* Coins arrondis pour un aspect plus moderne */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
-  margin-top: 3em; /* Espacement entre les sections */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Pour gérer l'overlay */
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
-/* Titre de la section Contact */
+/* Overlay assombrissant */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Assombrir l'arrière-plan */
+  z-index: 1; /* Place l'overlay sous le texte */
+ 
+}
+
+/* Contenu de la section, au-dessus de l'overlay */
+.contact .container {
+  position: relative;
+  z-index: 2; /* Assurer que le texte est au-dessus de l'overlay */
+  
+  
+}
+
+.contact a {
+  text-decoration: none;
+  color: #fff; /* Couleur blanche pour le lien */
+  text-decoration: underline;
+}
+
 .contact h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #a98467; /* Ton doré pour la cohérence avec le thème */
+  color: white; /* Ton doré pour la cohérence avec le thème */
   font-weight: bold;
 }
 
-/* Texte dans la section Contact */
-.contact p {
-  font-size: 1.1rem;
+.contact .contact-details {
+  font-size: 25px;
   line-height: 1.6;
-  color: #3e3e3e; /* Couleur du texte */
+  color: #fef4e8; /* Couleur du texte plus claire pour se détacher sur le fond sombre */
+}
+
+.contact .contact-details p {
   margin-bottom: 20px;
 }
 
-/* Bouton de contact */
-.contact .btn-contact {
-  padding: 12px 30px;
-  background-color: #a98467; /* Couleur dorée */
-  color: #fff;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Effet au survol du bouton */
-.contact .btn-contact:hover {
-  background-color: #ff6f61; /* Couleur légèrement plus vive */
-  transform: translateY(-5px); /* Légère élévation pour effet interactif */
+.contact .contact-details i {
+  margin-right: 10px; /* Espacement entre l'icône et le texte */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact {
-    padding: 40px 15px; /* Réduit l'espace interne sur mobile */
+    padding: 40px 15px;
   }
 
   .contact h2 {
     font-size: 1.8rem;
   }
 
-  .contact p {
+  .contact .contact-details {
     font-size: 1rem;
   }
 }
 
-
 /* Footer */
 footer {
-  background: #3e3e3e;
-  color: #fff;
+  background: #000000;
+  color: #f7efe3;
   text-align: center;
   padding: 20px 0;
   font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f7efe3;
+  text-decoration: underline;
+
 }
 .hero {
   margin-bottom: 4em; /* Séparation entre Hero et la section suivante */
